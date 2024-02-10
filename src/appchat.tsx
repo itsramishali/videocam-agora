@@ -7,6 +7,8 @@ import {
     rootStore,
 } from "chatuim2";
 import "chatuim2/style.css"; 
+// import { ConversationStore } from "chatuim2";
+
 
 const appKey = "411089371#1275052"; // Replace with your appKey
 const user = "ramishali-420"; // Replace with your user ID
@@ -50,6 +52,7 @@ const ChatApp: React.FC = () => {
                     console.log("get token success", res);
                     // create a conversation
                     rootStore.conversationStore.addConversation(conversation as import("c:/Users/user/videocam/node_modules/chatuim2/types/module/store/ConversationStore").Conversation);
+                    // rootStore.conversationStore.addConversation(conversation as import("c:/Users/user/videocam/node_modules/chatuim2/types/module/store/ConversationStore").Conversation);
                 });
     }, [client]);
 
