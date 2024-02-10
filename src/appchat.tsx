@@ -6,7 +6,7 @@ import {
     useClient,
     rootStore,
 } from "chatuim2";
-import "chatuim2/style.css";
+import "chatuim2/style.css"; 
 
 const appKey = "411089371#1275052"; // Replace with your appKey
 const user = "ramishali-420"; // Replace with your user ID
