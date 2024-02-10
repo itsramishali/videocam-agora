@@ -1,67 +1,76 @@
-// import { connect } from 'react-redux';
-// import React, { Component, Dispatch } from 'react';S
-// import https, { RequestOptions } from 'https';
+// LoginPage.tsx
 
-// type Props = {
-//   dispatch: Dispatch;
-// };
+import React, { useState } from 'react';
+import { signInWithEmailAndPassword, registerWithEmailAndPassword } from './auth';
+import './login.css'; // Import the CSS file
 
-// type State = {};
+const LoginPage: React.FC = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-// class YourComponent extends Component<Props, State> {
-//   state = {};
+    const handleLogin = async () => {
+        try {
+            setError('');
+            await signInWithEmailAndPassword(email, password);
+            // Handle successful login
+        } catch (error) {
+            setError((error as Error).message);
+            // Handle login error
+        }
+    };
 
-//   componentDidMount() {
-//     // HTTP Request
-//     const customerKey = "Your customer ID";
-//     const customerSecret = "Your customer secret";
-//     const plainCredential = `${customerKey}:${customerSecret}`;
-//     const encodedCredential = Buffer.from(plainCredential).toString('base64');
-//     const authorizationField = `Basic ${encodedCredential}`;
+    const handleRegister = async () => {
+        try {
+            setError('');
+            await registerWithEmailAndPassword(email, password); // Remove the 'isStudent' argument
 
-//     const options: RequestOptions = {
-//       hostname: 'api.agora.io',
-//       port: 443,
-//       path: '/dev/v1/projects',
-//       method: 'GET',
-//       headers: {
-//         'Authorization': authorizationField,
-//         'Content-Type': 'application/json',
-//       },
-//     };
+            // If registration is successful, handle it accordingly
+        } catch (error) {
+            setError((error as Error).message);
+            // Handle registration error
+        }
+    };
 
-//     const req = https.request(options, (res) => {
-//       console.log(`Status code: ${res.statusCode}`);
+    return (
+        <div>
+            <header className="header">
+                <img className='logo-img' src="/src/assets/Final Logo 4.png" alt="" />
+                <h1 className='head-ing'>CamRa</h1>
+            </header>
+            <div className="login-container">
+                <form className="login-form">
+                    <label htmlFor="email">Username/Email:</label>
+                    <input
+                        type="text"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />
 
-//       res.on('data', (d) => {
-//         process.stdout.write(d);
-//         // Handle the response data as needed
-//       });
-//     });
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
 
-//     req.on('error', (error) => {
-//       console.error(error);
-//     });
 
-//     req.end();
-//   }
 
-//   render() {
-//     return (
-//       <div>
-//         {/* Your component's UI */}
-//       </div>
-//     );
-//   }
-// }
 
-// const mapStateToProps = (state: RootState) => ({});
+                    <button type="button" onClick={handleLogin}>Login</button>
+                    <button type="button" onClick={handleRegister}>Register</button>
 
-// const mapDispatchToProps = {};
 
-// export default connect(mapStateToProps, mapDispatchToProps)(YourComponent);
+                </form>
 
-// // Assuming RootState is defined in another part of your code
-// type RootState = {
-//   // Define your Redux state types here
-// };
+                {error && <p className="error-message">{error}</p>}
+            </div>
+        </div>
+    );
+};
+
+export default LoginPage;

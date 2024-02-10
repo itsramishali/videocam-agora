@@ -30,8 +30,8 @@ const App: React.FunctionComponent = () => {
             <AgoraUIKit
               rtcProps={{
                 appId: '5dff16dd1f7b424ab1a92a130e9d3176',
-                channel: 'mechannel ',
-                token: "007eJxTYDi49EpSdaE3d0hAo3gyy/lfP6/MdPpcE1gt1O7lGGmSVqbAYJqSlmZolpJimGaeZGJkkphkmGhplGhobJBqmWJsaG726fiO1IZARgbG1+9ZgCQYgvhcDLmVCskZiXl5qTkMDAANCCIn", // add your token if using app in secured mode
+                channel: 'mechannel1',
+                token: "007eJxTYCjw2v676dY2p5dHDCS1FtXNtl8Qs+XkbP8SqZkcajXPb5xTYDBNSUszNEtJMUwzTzIxMklMMky0NEo0NDZItUwxNjQ3u6t1NLUhkJHBftlMFkYGCATxuRhyU5MzEvPyUnMMGRgAiskjAw==", // add your token if using app in secured mode
                 role: isHost ? 'host' : 'audience',
                 layout: isPinned ? layout.pin : layout.grid,
                 enableScreensharing: true
@@ -63,15 +63,18 @@ const App: React.FunctionComponent = () => {
   )
 }
 
+
 const styles = {
   container: {
+    margin: 0,
+    padding: 0,
     width: '100vw',
     height: '100vh',
     display: 'flex',
     flex: 1,
-    backgroundColor: '#007bff22'
+    backgroundColor: '#fff7ee'
   },
-  heading: { textAlign: 'center' as const, marginBottom: 0 },
+  heading: { textAlign: 'center' as const, marginBottom: 0, marginTop:30 },
   videoContainer: {
     display: 'flex',
     flexDirection: 'column',
@@ -79,7 +82,7 @@ const styles = {
   } as CSSProperties,
   nav: { display: 'flex', justifyContent: 'space-around' },
   btn: {
-    backgroundColor: '#007bff',
+    backgroundColor: ' #c700ff',
     cursor: 'pointer',
     borderRadius: 5,
     padding: '4px 8px',
@@ -90,3 +93,8 @@ const styles = {
 }
 
 export default App
+
+
+
+
+

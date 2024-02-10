@@ -12,6 +12,8 @@
   "dependencies": {
     "agora-chat": "^1.2.1",
     "agora-react-uikit": "^1.2.0",
+    "chatuim2": "^1.4.1-beta55",
+    "firebase": "^10.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
