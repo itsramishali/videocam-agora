@@ -1,5 +1,3 @@
-// LoginPage.tsx
-
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword, registerWithEmailAndPassword } from './auth';
 import './login.css'; // Import the CSS file
@@ -20,18 +18,29 @@ const LoginPage: React.FC = () => {
         }
     };
 
+    // const handleRegister = async () => {
+    //     try {
+    //         setError('');
+    //         await registerWithEmailAndPassword(email, password); // Removed the second argument
+
+    //         // If registration is successful, handle it accordingly
+    //     } catch (error) {
+    //         setError((error as Error).message);
+    //         // Handle registration error
+    //     }
+    // };
     const handleRegister = async () => {
         try {
             setError('');
-            await registerWithEmailAndPassword(email, password); // Remove the 'isStudent' argument
-
+            await registerWithEmailAndPassword(email,); // Pass email and password as separate arguments
+    
             // If registration is successful, handle it accordingly
         } catch (error) {
             setError((error as Error).message);
             // Handle registration error
         }
     };
-
+    
     return (
         <div>
             <header className="header">
@@ -58,13 +67,8 @@ const LoginPage: React.FC = () => {
                         required
                     />
 
-
-
-
                     <button type="button" onClick={handleLogin}>Login</button>
                     <button type="button" onClick={handleRegister}>Register</button>
-
-
                 </form>
 
                 {error && <p className="error-message">{error}</p>}
@@ -74,3 +78,4 @@ const LoginPage: React.FC = () => {
 };
 
 export default LoginPage;
+
