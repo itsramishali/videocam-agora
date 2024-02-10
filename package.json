@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/express": "^4.17.21",
     "agora-chat": "^1.2.1",
     "agora-react-uikit": "^1.2.0",
     "chatuim2": "^1.4.1-beta55",

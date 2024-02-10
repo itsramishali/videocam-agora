@@ -1,6 +1,6 @@
 import React, { CSSProperties, useState } from 'react'
 import AgoraUIKit, { layout } from 'agora-react-uikit'
-// import 'agora-react-uikit/dist/index.css'
+// import 'agora-react-uikit/dist/index.css'n
 
 
 
