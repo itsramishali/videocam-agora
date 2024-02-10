@@ -68,7 +68,7 @@ const ChatApp: React.FC = () => {
     );
 };
 
-class App extends Component {
+class Appchat extends Component {
     render() {
         return (
             <Provider
@@ -82,7 +82,7 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Appchat;
 
 
 
