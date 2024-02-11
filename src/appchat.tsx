@@ -6,37 +6,27 @@ import {
     useClient,
     rootStore,
 } from "chatuim2";
-import "chatuim2/style.css"; 
-// import { ConversationStore } from "chatuim2";
+import "chatuim2/style.css";
 
-
-const appKey = "411089371#1275052"; // Replace with your appKey
-const user = "ramishali-420"; // Replace with your user ID
-const agoraToken = "007eJxTYLDvYFl698PWJ6d+v1ry6Xb0KtFvKvvuXFvydz0/j8+BM4vWKzCYpqSlGZqlpBimmSeZGJkkJhkmWholGhobpFqmGBuam63nOpjaEMjIoBOmw8LIwMrAyMDEAOIzMAAA89khkw=="; // Replace with your agora chat token
-
-// Remove the declaration of the 'conversation' variable
-// const conversation: Conversation = {
-//   chatType: "singleChat", // 'singleChat' || 'groupChat'
-//   conversationId: "agora", // Target user id or group id
-//   name: "Agora", // Target user nickname or group name
-//   lastMessage: {},
-// };
+const appKey = "411089371#1275052";
+const user = "ramishali-420";
+const agoraToken = "007eJxTYLDvYFl698PWJ6d+v1ry6Xb0KtFvKvvuXFvydz0/j8+BM4vWKzCYpqSlGZqlpBimmSeZGJkkJhkmWholGhobpFqmGBuam63nOpjaEMjIoBOmw8LIwMrAyMDEAOIzMAAA89khkw==";
 
 const ChatApp: React.FC = () => {
     interface Conversation {
         chatType: string;
         conversationId: string;
         name: string;
-        lastMessage: any; // Update the type based on the actual structure
-        unreadCount: number; // Add the unreadCount property
+        lastMessage: any;
+        unreadCount: number;
     }
 
     const conversation: Conversation = {
-        chatType: "singleChat", // 'singleChat' || 'groupChat'
-        conversationId: "agora", // Target user id or group id
-        name: "Agora", // Target user nickname or group name
+        chatType: "singleChat",
+        conversationId: "agora",
+        name: "Agora",
         lastMessage: {},
-        unreadCount: 0, // Add the unreadCount property
+        unreadCount: 0,
     };
 
     const client = useClient();
@@ -50,9 +40,8 @@ const ChatApp: React.FC = () => {
                 })
                 .then((res: any) => {
                     console.log("get token success", res);
-                    // create a conversation
-                    rootStore.conversationStore.addConversation(conversation as import("c:/Users/user/videocam/node_modules/chatuim2/types/module/store/ConversationStore").Conversation);
-                    // rootStore.conversationStore.addConversation(conversation as import("c:/Users/user/videocam/node_modules/chatuim2/types/module/store/ConversationStore").Conversation);
+                    // Create a conversation
+                    rootStore.conversationStore.addConversation(conversation);
                 });
     }, [client]);
 
@@ -83,6 +72,7 @@ class Appchat extends Component {
 }
 
 export default Appchat;
+
 
 
 
