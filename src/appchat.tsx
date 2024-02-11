@@ -14,7 +14,7 @@ const agoraToken = "007eJxTYLDvYFl698PWJ6d+v1ry6Xb0KtFvKvvuXFvydz0/j8+BM4vWKzCYp
 
 const ChatApp: React.FC = () => {
     interface Conversation {
-        chatType: string;
+        chatType: string; // Use string type for chatType
         conversationId: string;
         name: string;
         lastMessage: any;
@@ -22,7 +22,7 @@ const ChatApp: React.FC = () => {
     }
 
     const conversation: Conversation = {
-        chatType: "singleChat",
+        chatType: "singleChat", // Provide a valid string value
         conversationId: "agora",
         name: "Agora",
         lastMessage: {},
@@ -72,6 +72,8 @@ class Appchat extends Component {
 }
 
 export default Appchat;
+
+
 
 
 
