@@ -13,8 +13,14 @@ const user = "ramishali-420";
 const agoraToken = "007eJxTYLDvYFl698PWJ6d+v1ry6Xb0KtFvKvvuXFvydz0/j8+BM4vWKzCYpqSlGZqlpBimmSeZGJkkJhkmWholGhobpFqmGBuam63nOpjaEMjIoBOmw8LIwMrAyMDEAOIzMAAA89khkw==";
 
 const ChatApp: React.FC = () => {
+    // Define the ChatType enum
+    enum ChatType {
+        SingleChat = 'singleChat',
+        GroupChat = 'groupChat'
+    }
+
     interface Conversation {
-        chatType: string; // Use string type for chatType
+        chatType: ChatType; // Use ChatType enum
         conversationId: string;
         name: string;
         lastMessage: any;
@@ -22,7 +28,7 @@ const ChatApp: React.FC = () => {
     }
 
     const conversation: Conversation = {
-        chatType: "singleChat", // Provide a valid string value
+        chatType: ChatType.SingleChat, // Provide a valid enum value
         conversationId: "agora",
         name: "Agora",
         lastMessage: {},
@@ -72,6 +78,7 @@ class Appchat extends Component {
 }
 
 export default Appchat;
+
 
 
 
