@@ -32,7 +32,7 @@ const ChatApp: React.FC = () => {
         chatType: ChatType.SingleChat, // Provide a valid enum value
         conversationId: "agora",
         name: "Agora",
-        lastMessage: String(""),
+        lastMessage: (""),
         unreadCount: 0,
     };
 
