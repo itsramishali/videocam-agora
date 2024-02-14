@@ -31,7 +31,7 @@ const App: React.FunctionComponent = () => {
               rtcProps={{
                 appId: '5dff16dd1f7b424ab1a92a130e9d3176',
                 channel: 'mechannel1',
-                token: "007eJxTYIj5d6jt9LcF9sImP10knnnViN8SNrPI8nvCfXeRy5Kv0ssVGExT0tIMzVJSDNPMk0yMTBKTDBMtjRINjQ1SLVOMDc3NdHqPpzYEMjIs3uzMysgAgSA+F0NuanJGYl5eao4hAwMAPWYh+Q==", // add your token if using app in secured mode
+                token: "007eJxTYNj5+gJ71PR7nm96P6ZcDGRVuR7CnPvjhmnwvESxuyu+/jmiwGCakpZmaJaSYphmnmRiZJKYZJhoaZRoaGyQaplibGhu9oXxbGpDICOD6L4YVkYGCATxuRhyU5MzEvPyUnMMGRgA7LQj/g==", // add your token if using app in secured mode
                 role: isHost ? 'host' : 'audience',
                 layout: isPinned ? layout.pin : layout.grid,
                 enableScreensharing: true
@@ -66,11 +66,12 @@ const App: React.FunctionComponent = () => {
 
 const styles = {
   container: {
-    margin: 0,
-    padding: 0,
-    width: '100vw',
+    // margin: 0,
+    // padding: 0,
+    width: '98vw',
     height: '100vh',
     display: 'flex',
+    // alignItems: 'center',
     flex: 1,
     backgroundColor: '#fff7ee'
   },

@@ -8,6 +8,7 @@ import {
 } from "chatuim2";
 import "chatuim2/style.css";
 
+
 const appKey = "411089371#1275052";
 const user = "ramishali-420";
 const agoraToken = "007eJxTYLDvYFl698PWJ6d+v1ry6Xb0KtFvKvvuXFvydz0/j8+BM4vWKzCYpqSlGZqlpBimmSeZGJkkJhkmWholGhobpFqmGBuam63nOpjaEMjIoBOmw8LIwMrAyMDEAOIzMAAA89khkw==";
@@ -23,7 +24,7 @@ const ChatApp: React.FC = () => {
         chatType: ChatType; // Use ChatType enum
         conversationId: string;
         name: string;
-        lastMessage: any;
+        lastMessage: string;
         unreadCount: number;
     }
 
@@ -31,7 +32,7 @@ const ChatApp: React.FC = () => {
         chatType: ChatType.SingleChat, // Provide a valid enum value
         conversationId: "agora",
         name: "Agora",
-        lastMessage: {},
+        lastMessage: String(""),
         unreadCount: 0,
     };
 
